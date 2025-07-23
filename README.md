@@ -1,8 +1,8 @@
-# 🚀 Agentic RAG Chatbot with Groq
+# Agentic RAG Chatbot with Groq
 
 A sophisticated multi-agent Retrieval-Augmented Generation (RAG) chatbot system built with Streamlit, powered by Groq's Llama3 model via LangChain. This system uses a distributed agent architecture with Model Context Protocol (MCP) for seamless document processing and intelligent Q&A.
 
-## ✨ Features
+##  Features
 
 - **Multi-Format Document Support**: PDF, DOCX, PPTX, CSV, TXT, Markdown
 - **Intelligent Document Processing**: Automatic parsing, chunking, and vectorization
@@ -13,7 +13,7 @@ A sophisticated multi-agent Retrieval-Augmented Generation (RAG) chatbot system 
 - **Source Attribution**: Automatic citation of relevant document chunks
 - **Fallback Processing**: Works without API keys using template-based responses
 
-## 🏗️ Architecture
+##  Architecture
 
 The system uses a multi-agent architecture with the following components:
 
@@ -88,7 +88,7 @@ Flow Diagram
 - **LLMResponseAgent**: Integrates with Groq API, generates contextual responses
 - **MCP Bus**: Facilitates structured message passing between agents
 
-## 📋 Requirements
+##  Requirements
 
 ### System Dependencies
 ```
@@ -111,7 +111,7 @@ python-dotenv==1.0.0
 pdfplumber==0.9.0
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone the Repository
 ```bash
@@ -174,7 +174,7 @@ top_k = 5
 score_threshold = 0.1
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 agentic-rag-chatbot/
@@ -213,7 +213,7 @@ llm = ChatGroq(
 ### Fallback Mode
 Without a Groq API key, the system provides template-based responses using the retrieved context, ensuring functionality even without external API access.
 
-## 💡 Usage Examples
+##  Usage Examples
 
 ### Document Upload
 ```python
@@ -248,7 +248,7 @@ Real-time monitoring of:
 - Reset vector store
 - Restart agent system
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -278,7 +278,7 @@ Enable debug information in the UI:
 - View MCP message history
 - Check system statistics
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -286,11 +286,7 @@ Enable debug information in the UI:
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Groq** for providing fast LLM inference
 - **LangChain** for LLM integration framework
@@ -298,7 +294,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **FAISS** for efficient similarity search
 - **Sentence Transformers** for semantic embeddings
 
-## 📞 Support
+##  Support
 
 For issues and questions:
 1. Check the troubleshooting section
@@ -307,5 +303,3 @@ For issues and questions:
 4. Include system information and error logs
 
 ---
-
-⭐ **Star this repository if you find it helpful!**
