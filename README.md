@@ -38,6 +38,47 @@ The system uses a multi-agent architecture with the following components:
 │   generation    │                               │   display       │
 └─────────────────┘                               └─────────────────┘
 ```
+Flow Diagram
+```
+                        ┌───────────────────────────────┐
+                        │        User Uploads File      │
+                        └──────────────┬────────────────┘
+                                       │
+                                       ▼
+                          ┌────────────────────────┐
+                          │   Streamlit Frontend   │
+                          │- Uploads files         │
+                          │- Chat interface        │
+                          └──────────┬─────────────┘
+                                     │
+                                     ▼
+                     ┌────────────────────────────────────┐
+                     │         CoordinatorAgent           │
+                     │- Orchestrates pipeline             │
+                     │- Routes messages to other agents   │
+                     └────┬────────────┬───────────────┬──┘
+                          │            │               │
+          ┌───────────────▼─┐      ┌───▼──────────┐ ┌───▼────────────┐
+          │ IngestionAgent  │      │ RetrievalAgent│ │LLMResponseAgent│
+          │ - File parsing  │      │ - FAISS index │ │- Query Groq API│
+          │ - Text chunking │      │ - Similarity  │ │- Generate reply│
+          └────────────┬────┘      │   search      │ └───────┬────────┘
+                       │           └──────┬─────────┘         │
+                       ▼                  ▼                   │
+            ┌────────────────┐    ┌────────────────────┐      │
+            │ DocumentParser │    │ SentenceTransformer│      │
+            │ (PDF, DOCX, etc)│    │ + FAISS Vector DB │      │
+            └────────────────┘    └────────────────────┘      │
+                                                            ▼
+                                          ┌────────────────────────────┐
+                                          │   Response Sent to Frontend│
+                                          └───────────────┬────────────┘
+                                                          ▼
+                                              ┌────────────────────┐
+                                              │    Streamlit UI    │
+                                              │  (Answer Displayed)│
+                                              └────────────────────┘
+```
 
 ### Agent Responsibilities
 
